@@ -9,7 +9,10 @@ import { verify } from 'jsonwebtoken';
 import compression from 'compression';
 import { checkConnection } from '@auth/elasticSearch';
 import http from 'http';
+<<<<<<< HEAD
 import { appRoute } from '@auth/route';
+=======
+>>>>>>> origin/main
 
 const SERVER_PORT = 4002;
 const log: Logger = winstonLogger(`${config.ELASTIC_SEARCH_URL}`, 'authenticationServer', 'debug');
@@ -24,7 +27,11 @@ export function startAuthServer(app: Application): void {
   startServer(app);
 }
 
+<<<<<<< HEAD
 function securityMiddleware(app: Application): void {
+=======
+function securityMiddleware(app: Application): voidapp {
+>>>>>>> origin/main
   routesMiddleware(app);
   app.set('trust proxy', 1);
   app.use(hpp());
@@ -57,7 +64,11 @@ function standardMiddleware(app: Application): void {
 }
 
 function routesMiddleware(app: Application): void {
+<<<<<<< HEAD
   appRoute(app);
+=======
+  console.log(app);
+>>>>>>> origin/main
 }
 
 async function startQueues(): Promise<void> {}
