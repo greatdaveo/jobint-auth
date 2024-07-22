@@ -6,7 +6,7 @@ import { Sequelize } from 'sequelize';
 const log: Logger = winstonLogger(`${config.ELASTIC_SEARCH_URL}`, 'authDatabaseServer', 'debug');
 
 export const authSequelize: Sequelize = new Sequelize(process.env.MYSQL_DB!, {
-  dialect: 'mssql',
+  dialect: 'mysql',
   logging: false,
   dialectOptions: {
     multipleStatements: true // To run multiple queries
