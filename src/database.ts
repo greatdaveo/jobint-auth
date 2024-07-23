@@ -5,7 +5,7 @@ import { Sequelize } from 'sequelize';
 
 const log: Logger = winstonLogger(`${config.ELASTIC_SEARCH_URL}`, 'authDatabaseServer', 'debug');
 
-export const authSequelize: Sequelize = new Sequelize(process.env.MYSQL_DB!, {
+export const authSequelize: Sequelize = new Sequelize(process.env.MYSQL_DB as string, {
   dialect: 'mysql',
   logging: false,
   dialectOptions: {
