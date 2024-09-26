@@ -13,15 +13,15 @@ async function createConnection(): Promise<Channel | undefined> {
     closeConnection(channel, connection);
     return channel;
   } catch (error) {
-    log.log('error', 'NotificationService error createConnection() method: ', error);
+    log.log('error', 'AuthService createConnection() method error: ', error);
     return undefined;
   }
 }
 
 function closeConnection(channel: Channel, connection: Connection): void {
-  process.once('SIGINT', () => {
-    channel.close();
-    connection.close();
+  process.once('SIGINT', async () => {
+    await channel.close();
+    await connection.close();
   });
 }
 

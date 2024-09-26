@@ -84,6 +84,10 @@ const AuthModel: ModelDefined<IAuthDocument, AuthUserCreationAttributes> & AuthM
       {
         unique: true,
         fields: ['username']
+      },
+      {
+        unique: true,
+        fields: ['emailVerificationToken']
       }
     ]
   }
